@@ -1,21 +1,27 @@
 {
-  "name": "node-mysql",
+  "name": "todo-node-mysql",
   "version": "1.0.0",
-  "description": "",
+  "description": "MySQL, Node.js, JS",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "MySQL",
+    "Node.js",
+    "JS"
+  ],
+  "author": "Pavel",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4",
-    "mysql2": "^1.6.5",
-    "sequelize": "^5.8.1"
+    "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.5.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.5"
   },
   "devDependencies": {
-    "nodemon": "^1.19.0"
+    "nodemon": "^2.0.12"
   }
 }

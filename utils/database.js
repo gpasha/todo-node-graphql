@@ -2,11 +2,11 @@ const Sequelize = require('sequelize')
 
 const DB_NAME = 'node-todo'
 const USER_NAME = 'root'
-const PASSWORD = '12345678'
+const PASSWORD = '12345qwertASDFGZXCVB'
 
 const sequelize = new Sequelize(DB_NAME, USER_NAME, PASSWORD, {
-  host: 'localhost',
-  dialect: 'mysql'
+    host: 'localhost',
+    dialect: 'mysql'
 })
 
 module.exports = sequelize
