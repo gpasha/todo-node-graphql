@@ -31,5 +31,41 @@ module.exports = {
         } catch(e) {
             throw new Error('Fetch todos is not available')
         }
+    },
+    async createTodo({todo}) {        
+        try {
+            return await Todo.create({
+                title: todo.title,
+                done: false
+            })
+        } catch(e) {
+            throw new Error('Title is required')
+        }   
+    },
+    async completeTodo({id}) {        
+        try {
+            const todo = await Todo.findByPk(+id)
+            todo.done = true
+            await todo.save()
+            return todo
+        } catch(e) {
+            throw new Error('Id is required')
+        }
+    },
+    async deleteTodo({id}) {     
+        try {
+            console.log('+id:', +id);
+            const todos = await Todo.findAll({
+                where: { id }
+            })
+            console.log('todos:', todos);
+            const todo = todos[0]
+            console.log('todo:', todo);
+            await todo.destroy()
+            return true
+        } catch(e) {
+            throw new Error('Id is required')
+            return false
+        }
     }
 }

@@ -14,19 +14,25 @@ module.exports = buildSchema(`
         name: String!
         email: String!
     }
-    type Mutation {
-        addTestUser(user: userInput): User!
-    }
     type Todo {
         id: ID!
-        title: String
-        done: Boolean
-        createdAt: String
-        updatedAt: String
+        title: String!
+        done: Boolean!
+        createdAt: String!
+        updatedAt: String!
     }
     type Query {
         test: TestType!
         random(min: Int!, max: Int!, count: Int!): [Float!]!
         getTodos: [Todo!]!
+    }
+    input TodoInput {
+        title: String!
+    }
+    type Mutation {
+        addTestUser(user: userInput): User!
+        createTodo(todo: TodoInput!): Todo!
+        completeTodo(id: ID!): Todo!
+        deleteTodo(id: ID!): Boolean!
     }
 `)
